@@ -16,6 +16,11 @@ class Artist
     @id = result[0]['id'].to_i()
   end
 
+  def update()
+    sql = "UPDATE artist SET (name) = (#{@name}) WHERE id = #{@id};"
+    SqlRunner.run(sql)
+  end
+
   def self.all()
     sql = "SELECT * FROM artist;"
     artist = SqlRunner.run(sql)
