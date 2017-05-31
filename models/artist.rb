@@ -22,5 +22,12 @@ class Artist
     return artist.map { |band| Artist.new(band) }
   end 
 
+  def show_albums()
+    sql = "SELECT * FROM album WHERE artist_id = #{@id};"
+    results = SqlRunner.run(sql)
+    albums = results.map { |albums| Album.new(albums)}
+    return 
+  end
+
 
 end
