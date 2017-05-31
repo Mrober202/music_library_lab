@@ -26,6 +26,14 @@ class Artist
     SqlRunner.run(sql)
   end
 
+  def self.find(id)
+    sql = "SELECT * FROM artist WHERE id = #{id};"
+    results = SqlRunner.run(sql)
+    artist_search = results.first
+    artist_search = PizzaOrder.new(artist_serach)
+    return artist_serach
+  end
+
   def self.all()
     sql = "SELECT * FROM artist;"
     artist = SqlRunner.run(sql)
