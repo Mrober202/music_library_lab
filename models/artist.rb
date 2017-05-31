@@ -26,7 +26,7 @@ class Artist
     sql = "SELECT * FROM album WHERE artist_id = #{@id};"
     results = SqlRunner.run(sql)
     albums = results.map { |albums| Album.new(albums)}
-    return 
+    return albums
   end
 
 
