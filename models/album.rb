@@ -17,6 +17,10 @@ class Album
       @id = result[0]['id'].to_i()
     end
 
+    def delete()
+      sql = "DELETE FROM album WHERE id = #{@id} ;"
+      SqlRunner.run(sql)
+    end
 
     def update()
       sql = "UPDATE album SET (artist_id, title, genre) = (#{@artist_id}, '#{@title}', '#{@genre}') WHERE id = #{@id};"
