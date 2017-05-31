@@ -22,6 +22,11 @@ class Artist
     return artist.map { |band| Artist.new(band) }
   end 
 
+  def self.delete_all()
+    sql = "DELETE FROM artist;"
+    SqlRunner.run(sql)
+  end
+
   def show_albums()
     sql = "SELECT * FROM album WHERE artist_id = #{@id};"
     results = SqlRunner.run(sql)
