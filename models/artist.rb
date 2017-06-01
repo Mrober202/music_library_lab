@@ -30,7 +30,7 @@ class Artist
     sql = "SELECT * FROM artist WHERE id = #{id};"
     results = SqlRunner.run(sql)
     artist_search = results.first
-    artist_search = PizzaOrder.new(artist_serach)
+    artist_search = Artist.new(artist_serach)
     return artist_serach
   end
 
